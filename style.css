@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FFF;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+.map-container{
+    display: flex;
+    justify-content: center;
+    gap: 20rem;
+    width: 100%;
+}
+path{
+    fill: #93BFCF;
+    stroke: #FFF;
+    stroke-width: 2px;
+    cursor: pointer;
+}
+path:hover{
+    fill: #6069b4;
+    transition: .5s;
+    
+}
+.card-estados{
+    background-color: #eee9da;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+    gap: 70px;
+}
+.dados-iniciais{
+    display: flex;
+    gap: 23px;
+    align-items: center;
+    justify-content: center;
+}
+.cidades{
+    overflow:auto; 
+    word-wrap: break-word;
+    margin-bottom: 15px;
+    padding-right: 16px;
+}
+.icon-sigla{
+    height: 75px;
+    background-color: #93BFCF;
+    border-radius: 100px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sigla{
+    color: #FFF;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.nome, .titulo, .capital, .regiao{
+    color: #93BFCF;
+    font-weight: 700;
+}
+.labelCapital, .labelRegiao{
+    color: #000;
+    font-weight: 400;
+}
+::-webkit-scrollbar{
+    width: 5px;
+    height: 10px;
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #93BFCF;
+}
