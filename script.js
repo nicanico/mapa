@@ -2,42 +2,41 @@
 
 const mapa = document.querySelector('svg')
 
+
 const getEstado = async (event) => {
     const estado = event.target.id.replace('BR-', '')
 
     const card = await preencherCard(estado)
 
-
-    
     console.log(card.cidades)
 
     const cidade = card.cidades
-    
-    cidade.forEach(element => {
-        const cidadesDiv = document.createElement('div')
-        cidadesDiv.classList.add('cidadeDiv')
-
-        const cidadeArray = document.createElement('p')
-        cidadeArray.classList.add('cidade')
-        cidadeArray.textContent = element
-
-        cidadesDiv.append(cidadeArray)
-
-        const cidadesPrincipal = document.getElementById('principal-cidades')
-        cidadesPrincipal.append(cidadesDiv)
-
-        console.log(cidadeArray)
-    });
-
+    console.log(cidade)
 
     document.getElementById('sigla').textContent = card.sigla
     document.getElementById('nome').textContent = card.estado
     document.getElementById('capital').textContent = card.capital
     document.getElementById('regiao').textContent = card.regiao
-    
-    
+
+    const cidadesBox = document.getElementById('cidadeBox')
+    const cardCidade = card.cidades.map(cidades)
+
+    console.log(cardCidade)
+    cidadesBox.replaceChildren(...cardCidade)
 
 }
+
+const cidades = (cidade) => {
+    const dados = cidade
+
+    const cidadeArray = document.createElement('p')
+    cidadeArray.classList.add('cidade')
+    cidadeArray.textContent = dados
+    console.log(cidadeArray)
+    return cidadeArray
+
+}
+
 const preencherCard = async (estado) => {
 
     const url = `http://localhost:8080/v2/senai/cidades?uf=${estado}`
