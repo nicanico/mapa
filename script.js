@@ -39,8 +39,8 @@ const cidades = (cidade) => {
 
 const preencherCard = async (estado) => {
 
-    const url = `http://localhost:8080/v2/senai/cidades?uf=${estado}`
-    const urlRegiao = `http://localhost:8080/v1/senai/estado/sigla/${estado}`
+    const url = `https://dull-tan-cape-buffalo-shoe.cyclic.app/v2/senai/cidades?uf=${estado}`
+    const urlRegiao = `https://dull-tan-cape-buffalo-shoe.cyclic.app/v1/senai/estado/sigla/${estado}`
 
     const response = await fetch(url)
     const responseRegiao = await fetch(urlRegiao)
